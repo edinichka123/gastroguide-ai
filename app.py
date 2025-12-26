@@ -7,7 +7,12 @@ if "recipe_md" not in st.session_state:
 
 api_key = os.getenv("OPENAI_API_KEY")
 
+if not api_key:
+    st.error("OPENAI_API_KEY is not set. Please add it to Streamlit Secrets.")
+    st.stop()
+
 client = OpenAI(api_key=api_key)
+
 
 
 # Fail fast if the key is missing (clear error for you)
@@ -366,6 +371,7 @@ with right:
 
 
       
+
 
 
 
