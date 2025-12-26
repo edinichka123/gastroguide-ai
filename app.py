@@ -1,12 +1,14 @@
 import os
 import streamlit as st
-
 from openai import OpenAI
+
 if "recipe_md" not in st.session_state:
     st.session_state.recipe_md = ""
 
-
 api_key = os.getenv("OPENAI_API_KEY")
+
+client = OpenAI(api_key=api_key)
+
 
 # Fail fast if the key is missing (clear error for you)
 if not api_key:
@@ -364,6 +366,7 @@ with right:
 
 
       
+
 
 
 
