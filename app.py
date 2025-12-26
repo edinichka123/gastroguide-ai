@@ -1,11 +1,11 @@
 import os
 import streamlit as st
-from dotenv import load_dotenv
+
 from openai import OpenAI
 if "recipe_md" not in st.session_state:
     st.session_state.recipe_md = ""
 
-load_dotenv()
+
 api_key = os.getenv("OPENAI_API_KEY")
 
 # Fail fast if the key is missing (clear error for you)
@@ -364,6 +364,7 @@ with right:
 
 
       
+
 
 
 
